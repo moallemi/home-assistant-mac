@@ -10,22 +10,15 @@ import Cocoa
 import WebKit
 
 class ViewController: NSViewController {
-    
 
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        webView.load(URLRequest(url: URL(string: "")!))
+        self.view.setFrameSize(NSSize(width: 1024, height: 768))
+        
+        webView.load(URLRequest(url: URL(string: "https://google.com")!))
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
 }
 
