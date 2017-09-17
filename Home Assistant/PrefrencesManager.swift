@@ -41,9 +41,13 @@ class PreferenceManager {
         }
     }
     
-    var defaultAddress: String {
+    public private(set) var defaultAddress: String {
         get {
             return userDefaults.string(forKey: defaultAddressKey)!
+        }
+        
+        set {
+            userDefaults.set(newValue, forKey: defaultAddressKey)
         }
     }
     
@@ -71,6 +75,7 @@ class PreferenceManager {
         let factoryDefaults = [
             defaultAddressIndexKey: NSNumber(value: 1), // index 1 = Global
             localAddressKey: NSString(),
+            defaultAddressKey: "https://home-assistant.io/demo/",
             globalAddressKey: "https://home-assistant.io/demo/"
             ] as [String : Any]
         
