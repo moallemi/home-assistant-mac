@@ -9,19 +9,14 @@
 import Cocoa
 import WebKit
 
-class ViewController: NSViewController {
+class BrowserViewController: NSViewController {
 
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.setFrameSize(NSSize(width: 1024, height: 768))
         
         webView.load(URLRequest(url: URL(string: PreferenceManager.sharedInstance.defaultAddress)!))
-        
-        //PreferenceManager.sharedInstance.reset()
-        
     }
 }
 
