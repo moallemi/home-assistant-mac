@@ -18,7 +18,10 @@ class ViewController: NSViewController {
 
         self.view.setFrameSize(NSSize(width: 1024, height: 768))
         
-        webView.load(URLRequest(url: URL(string: "https://google.com")!))
+        webView.load(URLRequest(url: URL(string: PreferenceManager.sharedInstance.defaultAddress)!))
+        
+        //PreferenceManager.sharedInstance.reset()
+        
     }
 }
 

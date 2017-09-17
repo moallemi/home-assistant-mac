@@ -13,9 +13,9 @@ class PrefrencesWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        self.window?.center()
-        self.window?.makeKeyAndOrderFront(nil)
-        NSApp.activate(ignoringOtherApps: true)
+        window?.level = Int(CGWindowLevelForKey(.floatingWindow))
         
+        window?.delegate = contentViewController as? NSWindowDelegate
     }
+
 }

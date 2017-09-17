@@ -18,17 +18,32 @@ class PreferenceManager {
     
     let userDefaults = UserDefaults.standard
     
+    fileprivate let defaultAddressIndexKey = "Default Address Index"
     fileprivate let defaultAddressKey = "Default Address"
     fileprivate let localAddressKey = "Local Address"
     fileprivate let globalAddressKey = "Global Address"
     
-    var defaultAddress: Int {
+    var defaultAddressIndex: Int {
         get {
-            return userDefaults.integer(forKey: defaultAddressKey)
+            return userDefaults.integer(forKey: defaultAddressIndexKey)
         }
         
         set {
-            userDefaults.set(newValue, forKey: defaultAddressKey)
+            userDefaults.set(newValue, forKey: defaultAddressIndexKey)
+            
+            if newValue == 0 && localAddress != "" {
+                userDefaults.set(localAddress, forKey: defaultAddressKey)
+            } else if newValue == 1 && globalAddress != "" {
+                userDefaults.set(globalAddress, forKey: defaultAddressKey)
+            } else {
+                userDefaults.set("https://home-assistant.io/demo/", forKey: defaultAddressKey)
+            }
+        }
+    }
+    
+    var defaultAddress: String {
+        get {
+            return userDefaults.string(forKey: defaultAddressKey)!
         }
     }
     
@@ -54,9 +69,9 @@ class PreferenceManager {
     
     fileprivate func registerFactoryDefaults() {
         let factoryDefaults = [
-            defaultAddressKey: NSNumber(value: 0), // index 0 = Local
+            defaultAddressIndexKey: NSNumber(value: 1), // index 1 = Global
             localAddressKey: NSString(),
-            globalAddressKey: NSString()
+            globalAddressKey: "https://home-assistant.io/demo/"
             ] as [String : Any]
         
         userDefaults.register(defaults: factoryDefaults)
@@ -68,6 +83,7 @@ class PreferenceManager {
     
     func reset() {
         userDefaults.removeObject(forKey: defaultAddressKey)
+        userDefaults.removeObject(forKey: defaultAddressIndexKey)
         userDefaults.removeObject(forKey: localAddressKey)
         userDefaults.removeObject(forKey: globalAddressKey)
         
