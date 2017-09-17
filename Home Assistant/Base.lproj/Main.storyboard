@@ -262,8 +262,14 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <progressIndicator wantsLayer="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="pyP-9q-Q3x">
+                                <rect key="frame" x="0.0" y="754" width="1024" height="20"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="pyP-9q-Q3x" firstAttribute="trailing" secondItem="DDe-pg-GeO" secondAttribute="trailing" id="6xC-Os-GIF"/>
+                            <constraint firstItem="pyP-9q-Q3x" firstAttribute="leading" secondItem="DDe-pg-GeO" secondAttribute="leading" id="CIK-CO-bmM"/>
+                            <constraint firstItem="pyP-9q-Q3x" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="-5" id="CZI-EY-IC9"/>
                             <constraint firstItem="DDe-pg-GeO" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="bdW-Qt-3Iu"/>
                             <constraint firstAttribute="bottom" secondItem="DDe-pg-GeO" secondAttribute="bottom" id="cJD-u5-66W"/>
                             <constraint firstItem="DDe-pg-GeO" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="flz-TT-vMc"/>
@@ -271,6 +277,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressView" destination="pyP-9q-Q3x" id="xfu-5A-T0n"/>
                         <outlet property="webView" destination="DDe-pg-GeO" id="1ZJ-LK-Ivt"/>
                     </connections>
                 </viewController>
