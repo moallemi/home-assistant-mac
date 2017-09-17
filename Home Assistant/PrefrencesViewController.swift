@@ -48,11 +48,11 @@ class PrefrencesViewController: NSViewController, NSWindowDelegate {
     
     func areSettingsValid() -> Bool {
         if comboDefaultAddress.indexOfSelectedItem == 0 && !validUrl(textFieldLocalAddress.stringValue) {
-            showDialog(question: "Invalid Local Address!", text: "Please check local url address again")
+            showDialog(message: "Invalid Local Address!", info: "Please check local url address again")
             return false
         }
         if comboDefaultAddress.indexOfSelectedItem == 1 && !validUrl(textFieldGlobalAddress.stringValue) {
-            showDialog(question: "Invalid Global Address!", text: "Please check global url address again")
+            showDialog(message: "Invalid Global Address!", info: "Please check global url address again")
             return false
         }
         return true
@@ -67,10 +67,10 @@ class PrefrencesViewController: NSViewController, NSWindowDelegate {
         return false
     }
     
-    func showDialog(question: String, text: String) {
+    func showDialog(message: String, info: String) {
         let alert: NSAlert = NSAlert()
-        alert.messageText = question
-        alert.informativeText = text
+        alert.messageText = message
+        alert.informativeText = info
         alert.alertStyle = NSAlertStyle.critical
         alert.addButton(withTitle: "OK")
         alert.beginSheetModal(for: view.window!, completionHandler: nil)
