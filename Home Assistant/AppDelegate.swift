@@ -22,15 +22,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }
-    
-    
-    @IBAction func preferencesClicked(_ sender: Any) {
-        let mainStoryboard = NSStoryboard.init(name: "Main", bundle: nil)
-        let myWindowController = mainStoryboard.instantiateController(withIdentifier: "preferences") as! NSWindowController
-        
-        NSApplication.shared().runModal(for: myWindowController.window!)
-        myWindowController.close()
-    }
-
 }
 

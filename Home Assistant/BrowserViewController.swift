@@ -43,6 +43,15 @@ class BrowserViewController: NSViewController, WKNavigationDelegate {
         webView.load(URLRequest(url: URL(string: PreferenceManager.sharedInstance.defaultAddress)!))
     }
     
+    @IBAction func preferencesClicked(_ sender: AnyObject) {
+        let mainStoryboard = NSStoryboard.init(name: "Main", bundle: nil)
+        let myWindowController = mainStoryboard.instantiateController(withIdentifier: "preferences") as! NSWindowController
+        
+        NSApplication.shared().runModal(for: myWindowController.window!)
+        reloadPage(sender)
+        myWindowController.close()
+    }
+    
     func showDialog(message: String, info: String) {
         let alert: NSAlert = NSAlert()
         alert.messageText = message
