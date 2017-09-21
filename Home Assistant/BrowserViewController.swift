@@ -39,6 +39,10 @@ class BrowserViewController: NSViewController, WKNavigationDelegate {
         showDialog(message: error.localizedDescription, info: "")
     }
     
+    @IBAction func reloadPage(_ sender: AnyObject) {
+        webView.load(URLRequest(url: URL(string: PreferenceManager.sharedInstance.defaultAddress)!))
+    }
+    
     func showDialog(message: String, info: String) {
         let alert: NSAlert = NSAlert()
         alert.messageText = message
