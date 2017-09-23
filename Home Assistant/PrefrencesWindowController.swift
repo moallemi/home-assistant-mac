@@ -13,7 +13,7 @@ class PrefrencesWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        window?.level = Int(CGWindowLevelForKey(.floatingWindow))
+        window?.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.floatingWindow)))
         
         window?.delegate = contentViewController as? NSWindowDelegate
     }

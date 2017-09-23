@@ -38,10 +38,10 @@ class PrefrencesViewController: NSViewController, NSWindowDelegate {
         preferenceManager.synchronize()
     }
     
-    func windowShouldClose(_ sender: Any) -> Bool {
+    func windowShouldClose(_ sender: NSWindow) -> Bool {
         let result = areSettingsValid()
         if result {
-            NSApplication.shared().stopModal()
+            NSApplication.shared.stopModal()
         }
         return result
     }
@@ -71,7 +71,7 @@ class PrefrencesViewController: NSViewController, NSWindowDelegate {
         let alert: NSAlert = NSAlert()
         alert.messageText = message
         alert.informativeText = info
-        alert.alertStyle = NSAlertStyle.critical
+        alert.alertStyle = NSAlert.Style.critical
         alert.addButton(withTitle: "OK")
         alert.beginSheetModal(for: view.window!, completionHandler: nil)
     }

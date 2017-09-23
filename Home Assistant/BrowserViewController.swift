@@ -44,10 +44,10 @@ class BrowserViewController: NSViewController, WKNavigationDelegate {
     }
     
     @IBAction func preferencesClicked(_ sender: AnyObject) {
-        let mainStoryboard = NSStoryboard.init(name: "Main", bundle: nil)
-        let myWindowController = mainStoryboard.instantiateController(withIdentifier: "preferences") as! NSWindowController
+        let mainStoryboard = NSStoryboard.init(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        let myWindowController = mainStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "preferences")) as! NSWindowController
         
-        NSApplication.shared().runModal(for: myWindowController.window!)
+        NSApplication.shared.runModal(for: myWindowController.window!)
         reloadPage(sender)
         myWindowController.close()
     }
@@ -56,7 +56,7 @@ class BrowserViewController: NSViewController, WKNavigationDelegate {
         let alert: NSAlert = NSAlert()
         alert.messageText = message
         alert.informativeText = info
-        alert.alertStyle = NSAlertStyle.critical
+        alert.alertStyle = NSAlert.Style.critical
         alert.addButton(withTitle: "OK")
         alert.beginSheetModal(for: view.window!, completionHandler: nil)
     }

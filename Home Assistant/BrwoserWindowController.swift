@@ -12,7 +12,7 @@ class BrwoserWindowController: NSWindowController {
 
     override func windowDidLoad() {
         shouldCascadeWindows = false
-        window?.setFrameAutosaveName("MainWindow")
+        window?.setFrameAutosaveName(NSWindow.FrameAutosaveName(rawValue: "MainWindow"))
         
         super.windowDidLoad()
     }
