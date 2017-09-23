@@ -15,6 +15,7 @@
 		F5F718E61F6AB55300A40C98 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F718E51F6AB55300A40C98 /* BrowserViewController.swift */; };
 		F5F718E81F6AB55300A40C98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5F718E71F6AB55300A40C98 /* Assets.xcassets */; };
 		F5F718EB1F6AB55300A40C98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F718E91F6AB55300A40C98 /* Main.storyboard */; };
+		F5FF2D3C1F76B937009D41AE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FF2D3B1F76B937009D41AE /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F5F718E71F6AB55300A40C98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5F718EA1F6AB55300A40C98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5F718EC1F6AB55300A40C98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5FF2D3B1F76B937009D41AE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				F5E41BF71F6E91F400B54880 /* Browser */,
 				F509ED691F6D290D0014E102 /* Prefrences */,
 				F5F718E31F6AB55300A40C98 /* AppDelegate.swift */,
+				F5FF2D3B1F76B937009D41AE /* Utils.swift */,
 				F5F718E71F6AB55300A40C98 /* Assets.xcassets */,
 				F5F718E91F6AB55300A40C98 /* Main.storyboard */,
 				F5F718EC1F6AB55300A40C98 /* Info.plist */,
@@ -164,6 +167,7 @@
 				F5F718E61F6AB55300A40C98 /* BrowserViewController.swift in Sources */,
 				F5F718E41F6AB55300A40C98 /* AppDelegate.swift in Sources */,
 				F509ED6B1F6D2F070014E102 /* PrefrencesManager.swift in Sources */,
+				F5FF2D3C1F76B937009D41AE /* Utils.swift in Sources */,
 				F56B3D3E1F6E4124005E491C /* PrefrencesViewController.swift in Sources */,
 				F5E41BF91F6E926E00B54880 /* BrwoserWindowController.swift in Sources */,
 				F509ED681F6D28B50014E102 /* PrefrencesWindowController.swift in Sources */,

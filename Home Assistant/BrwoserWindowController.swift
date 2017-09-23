@@ -14,6 +14,9 @@ class BrwoserWindowController: NSWindowController {
         shouldCascadeWindows = false
         window?.setFrameAutosaveName(NSWindow.FrameAutosaveName(rawValue: "MainWindow"))
         
+        window?.titlebarAppearsTransparent = true
+        window?.backgroundColor = NSColor(hexString: "#03A9F4")
+
         super.windowDidLoad()
     }
 
