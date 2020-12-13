@@ -1,3 +1,5 @@
+### NOTE: This repo was archived due to release of official Home Assistant Mac app at https://github.com/home-assistant/iOS/releases
+
 # Home Assistant macOS App
 Are you tired of having a tab always open in your browser for [Home Assistant](https://home-assistant.io)? So this app is for you!
 
